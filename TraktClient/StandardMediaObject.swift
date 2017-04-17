@@ -8,7 +8,7 @@
 
 import UIKit
 
-class StandardMediaObject: NSObject, ResponseObjectSerializable, ResponseCollectionSerializable {
+final class StandardMediaObject: ResponseObjectSerializable, ResponseCollectionSerializable, CustomStringConvertible {
     
     var type: StandardMediaObjectType
     var title: String
@@ -114,6 +114,57 @@ class StandardMediaObject: NSObject, ResponseObjectSerializable, ResponseCollect
         //To Do - Collection self.availibleTranslations = representationType[""]
         //To Do - Collection self.genres = representationType[""]
         self.certification = representationType["certification"] as? String
+    }
+    
+    var description: String {
+        var descriptionComponents: [String] = ["type: " + type.description]
+        descriptionComponents.append("title: " + title)
+        descriptionComponents.append("year: " + year.description)
+        descriptionComponents.append("ID's: " + ids.description)
+        if let watchers = watchers {
+            descriptionComponents.append("watchers: " + watchers.description)
+        }
+        if let tagline = tagline {
+            descriptionComponents.append("tagline: " + tagline)
+        }
+        if let overview = overview {
+            descriptionComponents.append("overview: " + overview)
+        }
+        if let released = released {
+            descriptionComponents.append("released: " + released.description)
+        }
+        if let runtime = runtime {
+            descriptionComponents.append("runtime: " + runtime.description)
+        }
+        if let trailer = trailer {
+            descriptionComponents.append("trailer: " + trailer)
+        }
+        if let homepage = homepage {
+            descriptionComponents.append("homepage: " + homepage)
+        }
+        if let rating = rating {
+            descriptionComponents.append("rating: " + rating.description)
+        }
+        if let votes = votes {
+            descriptionComponents.append("votes: " + votes.description)
+        }
+        if let updated_at = updated_at {
+            descriptionComponents.append("updated_at: " + updated_at.description)
+        }
+        if let language = language {
+            descriptionComponents.append("language: " + language)
+        }
+        if let availibleTranslations = availibleTranslations {
+            descriptionComponents.append("availibleTranslations:\n" + availibleTranslations.flatMap({$0}).joined(separator: "\n"))
+        }
+        if let genres = genres {
+            descriptionComponents.append("genres:\n" + genres.flatMap({$0}).joined(separator: "\n"))
+        }
+        if let certification = certification {
+            descriptionComponents.append("certification: " + certification)
+        }
+        
+        return descriptionComponents.flatMap({$0}).joined(separator: "\n")
     }
     
 }

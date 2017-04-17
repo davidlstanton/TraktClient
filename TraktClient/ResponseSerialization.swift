@@ -58,7 +58,6 @@ extension ResponseCollectionSerializable where Self: ResponseObjectSerializable 
                 }
             }
         }
-        
         return collection
     }
 }

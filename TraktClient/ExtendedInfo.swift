@@ -13,7 +13,7 @@ enum ExtendedInfo: String {
     case full = "full"
     case metadata = "metadata"
     
-    func parameter() -> Parameters {
+    var parameters : Parameters {
         return ["extended" : self.rawValue]
     }
 }

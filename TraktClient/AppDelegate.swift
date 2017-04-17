@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Alamofire
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -16,6 +17,16 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
+        
+        Alamofire.request(TraktRouter.moviesTrending(pagination: Pagination(), extendedInfo: .full)).responseCollection {
+            (response: DataResponse<[StandardMediaObject]>) in
+            if let standardMediaObjects = response.result.value {
+                standardMediaObjects.forEach{
+                    print($0.description + "\n")
+                }
+            }
+        }
+        
         return true
     }
 

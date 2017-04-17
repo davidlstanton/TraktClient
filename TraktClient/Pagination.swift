@@ -7,12 +7,13 @@
 //
 
 import UIKit
+import Alamofire
 
 struct Pagination {
-    let page: Int
-    let limit: Int
+    let page: Int = 1
+    let limit: Int = 10
     
-    func urlParameters() -> [String: Int] {
+    var parameters : Parameters {
         return ["page" : page, "limit" : limit]
     }
 }

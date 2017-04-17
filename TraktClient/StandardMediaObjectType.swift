@@ -8,7 +8,7 @@
 
 import UIKit
 
-enum StandardMediaObjectType: String {
+enum StandardMediaObjectType: String, CustomStringConvertible {
     case movie = "movie", show = "show", season = "season", episode = "episode", person = "person"
     init?(type:String) {
         switch(type) {
@@ -22,5 +22,8 @@ enum StandardMediaObjectType: String {
     }
     static func all() -> [StandardMediaObjectType] {
         return [.movie, .show, .season, .episode, .person]
+    }
+    var description: String {
+        return self.rawValue
     }
 }

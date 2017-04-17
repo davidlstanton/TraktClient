@@ -8,7 +8,7 @@
 
 import UIKit
 
-class StandardMediaObjectIds: NSObject, ResponseObjectSerializable  {
+final class StandardMediaObjectIds: ResponseObjectSerializable, CustomStringConvertible  {
 
     var trakt: Int
     var slug: String?
@@ -40,6 +40,26 @@ class StandardMediaObjectIds: NSObject, ResponseObjectSerializable  {
         self.tvdb = representation["tvdb"] as? Int
         self.tvrage = representation["tvrage"] as? Int
         
+    }
+    
+    var description: String {
+        var descriptionComponents: [String] = ["trakt: " + trakt.description]
+        if let slug = slug {
+            descriptionComponents.append("slug: " + slug)
+        }
+        if let imdb = imdb {
+            descriptionComponents.append("imdb: " + imdb)
+        }
+        if let tmdb = tmdb {
+            descriptionComponents.append("tmdb: " + tmdb.description)
+        }
+        if let tvdb = tvdb {
+            descriptionComponents.append("tvdb: " + tvdb.description)
+        }
+        if let tvrage = tvrage {
+            descriptionComponents.append("tvrage: " + tvrage.description)
+        }
+        return descriptionComponents.flatMap({$0}).joined(separator: "\n")
     }
     
 }
