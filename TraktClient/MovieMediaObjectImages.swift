@@ -1,5 +1,5 @@
 //
-//  MediaObjectImages.swift
+//  MovieMediaObjectImages.swift
 //  TraktClient
 //
 //  Created by David on 17/04/2017.
@@ -8,7 +8,7 @@
 
 import UIKit
 
-final class MediaObjectImages: ResponseObjectSerializable, CustomStringConvertible {
+final class MovieMediaObjectImages: ResponseObjectSerializable, CustomStringConvertible {
     
     let name: String
     let tmdb: Int?
@@ -29,19 +29,19 @@ final class MediaObjectImages: ResponseObjectSerializable, CustomStringConvertib
             let rep = representation as? [String: Any],
             let name = rep["name"] as? String
         else { return nil }
+        self.name = name
         tmdb = representation as? Int
         imdb = representation as? String
         
-        hdMovieClearArt = MediaObjectImage(response: response, representation: rep["hdmovieclearart"])
-        moviePoster = MediaObjectImage(response: response, representation: rep["movieposter"])
-        hdmovieLogo = MediaObjectImage(response: response, representation: rep["hdmovielogo"])
-        movieBackground = MediaObjectImage(response: response, representation: rep["moviebackground"])
-        movieDisk = MediaObjectImage(response: response, representation: rep["moviedisc"])
-        movieArt = MediaObjectImage(response: response, representation: rep["movieart"])
-        movieThumb = MediaObjectImage(response: response, representation: rep["moviethumb"])
-        movieLogo = MediaObjectImage(response: response, representation: rep["movielogo"])
-        movieBanner = MediaObjectImage(response: response, representation: rep["moviebanner"])
-        
+        hdMovieClearArt = MediaObjectImage.collection(from: response, withRepresentation: rep["hdmovieclearart"] ?? [])
+        moviePoster = MediaObjectImage.collection(from: response, withRepresentation: rep["movieposter"] ?? [])
+        hdmovieLogo = MediaObjectImage.collection(from: response, withRepresentation: rep["hdmovielogo"] ?? [])
+        movieBackground = MediaObjectImage.collection(from: response, withRepresentation: rep["moviebackground"] ?? [])
+        movieDisk = MediaObjectImage.collection(from: response, withRepresentation: rep["moviedisc"] ?? [])
+        movieArt = MediaObjectImage.collection(from: response, withRepresentation: rep["movieart"] ?? [])
+        movieThumb = MediaObjectImage.collection(from: response, withRepresentation: rep["moviethumb"] ?? [])
+        movieLogo = MediaObjectImage.collection(from: response, withRepresentation: rep["movielogo"] ?? [])
+        movieBanner = MediaObjectImage.collection(from: response, withRepresentation: rep["moviebanner"] ?? [])
     }
     
     var description: String {
