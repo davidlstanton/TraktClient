@@ -10,24 +10,24 @@ import UIKit
 
 final class StandardMediaObject: ResponseObjectSerializable, ResponseCollectionSerializable, CustomStringConvertible {
     
-    var type: StandardMediaObjectType
-    var title: String
-    var year: Int
-    var ids: StandardMediaObjectIds
-    var watchers: Int?
-    var tagline: String?
-    var overview: String?
-    var released: Date?
-    var runtime: Int?
-    var trailer: String?
-    var homepage: String?
-    var rating: Double?
-    var votes: Int?
-    var updated_at: Date?
-    var language: String?
-    var availibleTranslations: [String]?
-    var genres: [String]?
-    var certification: String?
+    let type: StandardMediaObjectType
+    let title: String
+    let year: Int
+    let ids: StandardMediaObjectIds
+    let watchers: Int?
+    let tagline: String?
+    let overview: String?
+    let released: Date?
+    let runtime: Int?
+    let trailer: String?
+    let homepage: String?
+    let rating: Double?
+    let votes: Int?
+    let updated_at: Date?
+    let language: String?
+    let availibleTranslations: [String]?
+    let genres: [String]?
+    let certification: String?
 
     init( type: StandardMediaObjectType,
           title: String,

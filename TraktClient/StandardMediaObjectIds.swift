@@ -10,12 +10,12 @@ import UIKit
 
 final class StandardMediaObjectIds: ResponseObjectSerializable, CustomStringConvertible  {
 
-    var trakt: Int
-    var slug: String?
-    var imdb: String?
-    var tmdb: Int?
-    var tvdb: Int?
-    var tvrage: Int?
+    let trakt: Int
+    let slug: String?
+    let imdb: String?
+    let tmdb: Int?
+    let tvdb: Int?
+    let tvrage: Int?
     
     init(trakt: Int, slug: String?=nil, imdb:String?=nil, tmdb:Int?=nil, tvdb:Int?=nil, tvrage:Int?=nil) {
         self.trakt = trakt
