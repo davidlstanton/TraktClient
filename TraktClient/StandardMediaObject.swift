@@ -8,7 +8,7 @@
 
 import UIKit
 
-class StandardMediaObject: NSObject, ResponseObjectSerializable {
+class StandardMediaObject: NSObject, ResponseObjectSerializable, ResponseCollectionSerializable {
     
     var type: StandardMediaObjectType
     var title: String
@@ -115,6 +115,7 @@ class StandardMediaObject: NSObject, ResponseObjectSerializable {
         //To Do - Collection self.genres = representationType[""]
         self.certification = representationType["certification"] as? String
     }
+    
 }
 
 
