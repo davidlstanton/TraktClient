@@ -1,5 +1,5 @@
 //
-//  mediaImage.swift
+//  MediaImages.swift
 //  TraktClient
 //
 //  Created by David on 17/04/2017.
@@ -8,6 +8,6 @@
 
 import UIKit
 
-class mediaImage: NSObject {
+class MediaImages: NSObject {
 
 }
