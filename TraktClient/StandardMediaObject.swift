@@ -82,9 +82,6 @@ final class StandardMediaObject: ResponseObjectSerializable, ResponseCollectionS
             self.type = type[0]
         } else { return nil }  // doesn't have a valid type (unable to proceed)
         
-        //
-        self.watchers = rep["watchers"] as? Int
-        
         // Extract the rest of the data using type as key
         
         guard
@@ -103,16 +100,20 @@ final class StandardMediaObject: ResponseObjectSerializable, ResponseCollectionS
         self.watchers = rep["watchers"] as? Int  // NB this fields is not under type
         self.tagline = representationType["tagline"] as? String
         self.overview = representationType["overview"] as? String
-        //To Do -  Date self.released = representationType["released"]
+            //To Do -  Date self.released = representationType["released"]
+            self.released = nil
         self.runtime = representationType["runtime"] as? Int
         self.trailer = representationType["trailer"] as? String
         self.homepage = representationType["homepage"] as? String
         self.rating = representationType["rating"] as? Double
         self.votes = representationType["votes"] as? Int
         //To Do - Date self.updated_at = representationType["updated_at"]
+            self.updated_at = nil
         self.language = representationType["language"] as? String
         //To Do - Collection self.availibleTranslations = representationType[""]
+        self.availibleTranslations = []
         //To Do - Collection self.genres = representationType[""]
+            self.genres = []
         self.certification = representationType["certification"] as? String
     }
     
