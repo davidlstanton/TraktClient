@@ -7,7 +7,21 @@
 //
 
 import UIKit
+import Alamofire
 
-class FanArtAssetRouter: NSObject {
-
+enum FanArtAssetRouter: URLRequestConvertible {
+    case preview(urlString: String), full(urlString: String)
+    
+    func asURLRequest() throws -> URLRequest {
+        
+        var url: String {
+            switch self {
+                case let .full(urlString):
+                    return urlString
+                case let .preview(urlString):
+                    return urlString.replacingOccurrences(of: "/fanart/", with: "/preview/")
+            }
+        }
+        return try URLRequest(url: url.asURL())
+    }
 }
