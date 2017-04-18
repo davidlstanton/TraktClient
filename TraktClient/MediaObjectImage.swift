@@ -10,13 +10,13 @@ import UIKit
 
 final class MediaObjectImage: ResponseObjectSerializable, ResponseCollectionSerializable, CustomStringConvertible {
 
-    let identifier: String
+    let id: String
     let url: String
     let lang: String
     let likes: String
     
-    init(identifier: String, url: String, lang: String, likes: String) {
-        self.identifier = identifier
+    init(id: String, url: String, lang: String, likes: String) {
+        self.id = id
         self.url = url
         self.lang = lang
         self.likes = likes
@@ -30,7 +30,7 @@ final class MediaObjectImage: ResponseObjectSerializable, ResponseCollectionSeri
             let lang = rep["lang"] as? String,
             let likes = rep["likes"] as? String
             else { return nil }
-        self.identifier = identifier
+        self.id = id
         self.url = url
         self.lang = lang
         self.likes = likes
