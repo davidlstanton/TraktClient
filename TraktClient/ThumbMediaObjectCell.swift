@@ -16,5 +16,12 @@ class ThumbMediaObjectCell: UICollectionViewCell {
     
     func setCell(with mediaObject: MediaObjectViewModel) {
         imageView.af_setImage(withURLRequest: FanArtAssetRouter.preview(urlString: mediaObject.thumbUrlString))
+        titleLabel.text = mediaObject.title
     }
+    
+    override func viewDidLayoutSubviews() {
+        super.viewDidLayoutSubviews()
+        collectionView.frame = view.bounds
+    }
+    
 }

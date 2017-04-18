@@ -9,28 +9,23 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
-        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="ThumbMediaObjectCell" customModule="TraktClient" customModuleProvider="target">
-            <connections>
-                <outlet property="imageView" destination="tm9-Qy-qWa" id="h88-lk-w2q"/>
-                <outlet property="titleLabel" destination="f5G-bE-xbT" id="OfP-Lo-kuN"/>
-            </connections>
-        </placeholder>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="ThumbMediaObjectCell" customModule="TraktClient" customModuleProvider="target"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
         <view contentMode="scaleToFill" id="iN0-l3-epB" customClass="ThumbMediaObjectCell" customModule="TraktClient" customModuleProvider="target">
-            <rect key="frame" x="0.0" y="0.0" width="406" height="158"/>
+            <rect key="frame" x="0.0" y="0.0" width="100" height="100"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="tm9-Qy-qWa">
-                    <rect key="frame" x="0.0" y="0.0" width="406" height="137"/>
+                    <rect key="frame" x="0.0" y="0.0" width="100" height="79"/>
                 </imageView>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="f5G-bE-xbT">
-                    <rect key="frame" x="0.0" y="137" width="406" height="21"/>
+                    <rect key="frame" x="0.0" y="79" width="100" height="21"/>
                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                     <nil key="textColor"/>
                     <nil key="highlightedColor"/>
                 </label>
             </subviews>
-            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color key="backgroundColor" red="1" green="0.20000000000000001" blue="0.12549019610000001" alpha="1" colorSpace="calibratedRGB"/>
             <constraints>
                 <constraint firstAttribute="trailing" secondItem="tm9-Qy-qWa" secondAttribute="trailing" id="6Hv-Zy-hj9"/>
                 <constraint firstItem="f5G-bE-xbT" firstAttribute="top" secondItem="tm9-Qy-qWa" secondAttribute="bottom" id="80i-4j-19s"/>
@@ -41,6 +36,10 @@
                 <constraint firstItem="tm9-Qy-qWa" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="g0g-CV-0xS"/>
             </constraints>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <connections>
+                <outlet property="imageView" destination="tm9-Qy-qWa" id="LUl-31-6Xr"/>
+                <outlet property="titleLabel" destination="f5G-bE-xbT" id="3XK-qb-KDR"/>
+            </connections>
             <point key="canvasLocation" x="-10" y="-249"/>
         </view>
     </objects>
