@@ -8,6 +8,11 @@
 
 import UIKit
 
-class MediaObjectView: NSObject {
+class MediaObjectView {
 
+    let id: Int
+    
+    init(id: Int) {
+        <#statements#>
+    }
 }

@@ -25,7 +25,7 @@ final class MediaObjectImage: ResponseObjectSerializable, ResponseCollectionSeri
     required init?(response: HTTPURLResponse, representation: Any) {
         guard
             let rep = representation as? [String : Any],
-            let identifier = rep["id"] as? String,
+            let id = rep["id"] as? String,
             let url = rep["url"] as? String,
             let lang = rep["lang"] as? String,
             let likes = rep["likes"] as? String
@@ -37,6 +37,6 @@ final class MediaObjectImage: ResponseObjectSerializable, ResponseCollectionSeri
     }
     
     var description: String {
-        return "id: \(identifier)\n url: \(url)\n lang: \(lang)\n likes: \(likes)\n"
+        return "id: \(id)\n url: \(url)\n lang: \(lang)\n likes: \(likes)\n"
     }
 }
