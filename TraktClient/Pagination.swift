@@ -10,8 +10,13 @@ import UIKit
 import Alamofire
 
 struct Pagination {
-    let page: Int = 1
-    let limit: Int = 10
+    let page: Int
+    let limit: Int
+    
+    init(page: Int, limit: Int) {
+        self.page = page
+        self.limit = limit
+    }
     
     var parameters : Parameters {
         return ["page" : page, "limit" : limit]
