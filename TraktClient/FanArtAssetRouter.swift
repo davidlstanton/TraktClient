@@ -22,6 +22,7 @@ enum FanArtAssetRouter: URLRequestConvertible {
                     return urlString.replacingOccurrences(of: "/fanart/", with: "/preview/")
             }
         }
-        return try URLRequest(url: url.asURL())
+        var sslUrl = url.replacingOccurrences(of: "http://", with: "https://")
+        return try URLRequest(url: sslUrl.asURL())
     }
 }
