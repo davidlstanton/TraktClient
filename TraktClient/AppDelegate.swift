@@ -21,12 +21,16 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         Alamofire.request(TraktRouter.moviesTrending(pagination: Pagination(), extendedInfo: .full)).responseCollection {
             (response: DataResponse<[StandardMediaObject]>) in
             if let standardMediaObjects = response.result.value {
-                standardMediaObjects.forEach{
-                    print($0.description + "\n")
+                standardMediaObjects.forEach {
+                    Alamofire.request(FanArtRouter.movie(ids: $0.ids)).responseObject {
+                        (response: DataResponse<MovieMediaObjectImages>) in
+                        if let mediaObjects = response.result.value {
+                            print(mediaObjects.description)
+                        }
+                    }
                 }
             }
         }
-        
         return true
     }
 

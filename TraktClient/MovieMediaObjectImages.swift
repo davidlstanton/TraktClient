@@ -32,7 +32,7 @@ final class MovieMediaObjectImages: ResponseObjectSerializable, CustomStringConv
         self.name = name
         tmdb = representation as? Int
         imdb = representation as? String
-        
+
         hdMovieClearArt = MediaObjectImage.collection(from: response, withRepresentation: rep["hdmovieclearart"] ?? [])
         moviePoster = MediaObjectImage.collection(from: response, withRepresentation: rep["movieposter"] ?? [])
         hdmovieLogo = MediaObjectImage.collection(from: response, withRepresentation: rep["hdmovielogo"] ?? [])

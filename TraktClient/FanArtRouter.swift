@@ -11,7 +11,7 @@ import Alamofire
 
 enum FanArtRouter: URLRequestConvertible {
 
-    static let baseURL = "http://webservice.fanart.tv"
+    static let baseURL = "https://webservice.fanart.tv"
     static let apiKey = "3d131d797ffe307c4308957f70f07d72"
     static let apiVersion = "2"
     
@@ -31,7 +31,7 @@ enum FanArtRouter: URLRequestConvertible {
             }
         }()
         
-        let url = try TraktRouter.baseURL.asURL()
+        let url = try FanArtRouter.baseURL.asURL()
         var urlRequest = URLRequest(url: url.appendingPathComponent(path))
         urlRequest.setValue(FanArtRouter.apiKey, forHTTPHeaderField: "api-key")
         return try URLEncoding.default.encode(urlRequest, with: nil)
