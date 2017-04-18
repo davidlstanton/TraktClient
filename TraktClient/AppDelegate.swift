@@ -18,19 +18,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
         
-        Alamofire.request(TraktRouter.moviesTrending(pagination: Pagination(), extendedInfo: .full)).responseCollection {
-            (response: DataResponse<[StandardMediaObject]>) in
-            if let standardMediaObjects = response.result.value {
-                standardMediaObjects.forEach {
-                    Alamofire.request(FanArtRouter.movie(ids: $0.ids)).responseObject {
-                        (response: DataResponse<MovieMediaObjectImages>) in
-                        if let mediaObjects = response.result.value {
-                            print(mediaObjects.description)
-                        }
-                    }
-                }
-            }
-        }
         return true
     }
 
