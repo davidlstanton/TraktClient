@@ -9,6 +9,7 @@ target 'TraktClient' do
   pod 'Alamofire', '~> 4.4'
   pod 'AlamofireImage', '~> 3.1'
   pod 'AlamofireNetworkActivityIndicator', '~> 2.0'
+  pod 'IGListKit', '~> 2.0.0'
 
   target 'TraktClientTests' do
     inherit! :search_paths
