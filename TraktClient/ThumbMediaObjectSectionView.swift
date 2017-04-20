@@ -11,7 +11,7 @@ import IGListKit
 
 class ThumbMediaObjectSectionView: IGListSectionController, IGListSectionType {
     
-    private var viewModel: MediaObjectViewModel?
+    var viewModel: MediaObjectViewModel?
     
     func numberOfItems() -> Int {
         return 1
@@ -19,8 +19,8 @@ class ThumbMediaObjectSectionView: IGListSectionController, IGListSectionType {
     
     func sizeForItem(at index: Int) -> CGSize {
         let ccw = collectionContext!.containerSize.width
-        let width = (ccw/2.0) - 10
-        return CGSize(width: width, height: width)
+        let width = (ccw/2.0)
+        return CGSize(width: width, height: width * 0.66)
     }
     
     func cellForItem(at index: Int) -> UICollectionViewCell {
@@ -37,6 +37,7 @@ class ThumbMediaObjectSectionView: IGListSectionController, IGListSectionType {
         }
     }
     
-    func didSelectItem(at index: Int) {}
-    
+    func didSelectItem(at index: Int) {
+        self.viewController!.performSegue(withIdentifier: "detailMediaViewController", sender: self)
+    }
 }

@@ -10,18 +10,19 @@ import UIKit
 import AlamofireImage
 
 class ThumbMediaObjectCell: UICollectionViewCell {
-    
+        
     @IBOutlet private weak var imageView: UIImageView!
-    @IBOutlet private weak var titleLabel: UILabel!
     
     func setCell(with mediaObject: MediaObjectViewModel) {
-        imageView.af_setImage(withURLRequest: FanArtAssetRouter.preview(urlString: mediaObject.thumbUrlString))
-        titleLabel.text = mediaObject.title
-    }
-    
-    override func viewDidLayoutSubviews() {
-        super.viewDidLayoutSubviews()
-        collectionView.frame = view.bounds
+        
+        translatesAutoresizingMaskIntoConstraints = true;
+        imageView.contentMode = .scaleAspectFit
+        
+        imageView.af_setImage(withURLRequest: FanArtAssetRouter.preview(urlString: mediaObject.thumbUrlString), placeholderImage: UIImage(), filter: nil, progress: nil, progressQueue: .global(qos: .default), imageTransition: UIImageView.ImageTransition.crossDissolve(0.2), runImageTransitionIfCached: false) { (_) in
+            DispatchQueue.main.async {
+                
+            }
+        }
     }
     
 }

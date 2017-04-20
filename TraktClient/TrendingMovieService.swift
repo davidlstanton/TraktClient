@@ -13,20 +13,30 @@ class TrendingMovieService {
 
     class func trendingMovies(page: Pagination, callback: @escaping ([MediaObjectViewModel])->()) {
         var mediaObjectViewModels: [MediaObjectViewModel] = []
-        
+        print(page)
         Alamofire.request(TraktRouter.moviesTrending(pagination: page, extendedInfo: .full)).responseCollection {
             (response: DataResponse<[StandardMediaObject]>) in
+            if let error = response.error {
+                print(error)
+            }
             if let standardMediaObjects = response.result.value {
                 let group = DispatchGroup()
                 standardMediaObjects.forEach { (smo) in
                     group.enter()
+                    print("enter")
                     Alamofire.request(FanArtRouter.movie(ids: smo.ids)).responseObject {
                         (response: DataResponse<MovieMediaObjectImages>) in
+                        if let error = response.error {
+                            print(error)
+                        }
                         if let mediaObjects = response.result.value {
                             guard
                                 let posterImage = mediaObjects.moviePoster?.first,
                                 let thumbImage = mediaObjects.movieThumb?.first
-                            else { return }
+                            else {
+                                group.leave()
+                                return
+                            }
                             if let mediaObject = MediaObjectViewModel(
                                 standardMediaObject: smo,
                                 posterImage: posterImage,
@@ -35,9 +45,11 @@ class TrendingMovieService {
                             }
                         }
                         group.leave()
+                        print("leave")
                     }
                 }
                 group.notify(queue: DispatchQueue.main) {
+                    print("calling callback")
                     callback(mediaObjectViewModels)
                 }
             }

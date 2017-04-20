@@ -9,7 +9,7 @@
 import UIKit
 import Alamofire
 
-struct Pagination {
+struct Pagination: CustomStringConvertible {
     let page: Int
     let limit: Int
     
@@ -20,5 +20,9 @@ struct Pagination {
     
     var parameters : Parameters {
         return ["page" : page, "limit" : limit]
+    }
+    
+    var description: String {
+        return "page: \(page)\nlimit: \(limit)"
     }
 }

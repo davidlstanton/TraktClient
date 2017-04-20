@@ -21,6 +21,7 @@ class TrendingMoviesViewController:  UIViewController, IGListAdapterDataSource, 
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        title = "Trending Movies"
         view.addSubview(collectionView)
         adapter.collectionView = collectionView
         adapter.dataSource = self
@@ -79,4 +80,15 @@ class TrendingMoviesViewController:  UIViewController, IGListAdapterDataSource, 
             }
         })
     }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "detailMediaViewController" ,
+            let detailView = segue.destination as? DetailMediaViewController ,
+            let sectionView = sender as? ThumbMediaObjectSectionView {
+            if let viewModel = sectionView.viewModel {
+                detailView.viewModel = viewModel
+            }
+        }
+    }
+    
 }
