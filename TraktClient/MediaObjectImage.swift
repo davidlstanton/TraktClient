@@ -6,8 +6,6 @@
 //  Copyright © 2017 DavidStanton. All rights reserved.
 //
 
-import UIKit
-
 final class MediaObjectImage: ResponseObjectSerializable, ResponseCollectionSerializable, CustomStringConvertible {
 
     let id: String

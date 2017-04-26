@@ -6,8 +6,6 @@
 //  Copyright © 2017 DavidStanton. All rights reserved.
 //
 
-import UIKit
-
 enum BackendError: Error {
     case network(error: Error) // Capture any underlying Error from the URLSession API
     case dataSerialization(error: Error)

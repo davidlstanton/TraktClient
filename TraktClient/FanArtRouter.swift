@@ -6,7 +6,6 @@
 //  Copyright © 2017 DavidStanton. All rights reserved.
 //
 
-import UIKit
 import Alamofire
 
 enum FanArtRouter: URLRequestConvertible {

@@ -9,7 +9,6 @@
 //  One would be forgiven for wondering why this is not therefore included with Alamofire.
 //
 
-import UIKit
 import Alamofire
 
 protocol ResponseObjectSerializable {

@@ -6,8 +6,6 @@
 //  Copyright © 2017 DavidStanton. All rights reserved.
 //
 
-import UIKit
-
 final class StandardMediaObject: ResponseObjectSerializable, ResponseCollectionSerializable, CustomStringConvertible {
     
     let type: StandardMediaObjectType

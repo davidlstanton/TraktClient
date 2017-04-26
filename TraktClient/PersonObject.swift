@@ -8,6 +8,7 @@
 
 import UIKit
 
-class PersonObject: NSObject {
+class PersonObject: ResponseObjectSerializable, ResponseCollectionSerializable, CustomStringConvertible  {
+    
 
 }

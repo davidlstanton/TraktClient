@@ -6,8 +6,6 @@
 //  Copyright © 2017 DavidStanton. All rights reserved.
 //
 
-import UIKit
-
 enum StandardMediaObjectType: String, CustomStringConvertible {
     case movie = "movie", show = "show", season = "season", episode = "episode", person = "person"
     init?(type:String) {
