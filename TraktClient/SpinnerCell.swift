@@ -37,6 +37,8 @@ final class SpinnerCell: UICollectionViewCell {
         super.layoutSubviews()
         let bounds = contentView.bounds
         activityIndicator.center = CGPoint(x: bounds.midX, y: bounds.midY)
+        let view = UIView()
+        view.removeFromSuperview()
     }
     
 }

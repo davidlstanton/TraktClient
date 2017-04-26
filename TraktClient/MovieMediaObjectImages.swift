@@ -6,6 +6,8 @@
 //  Copyright © 2017 DavidStanton. All rights reserved.
 //
 
+import Foundation
+
 final class MovieMediaObjectImages: ResponseObjectSerializable, CustomStringConvertible {
     
     let name: String

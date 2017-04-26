@@ -5,6 +5,7 @@
 //  Created by David on 10/04/2017.
 //  Copyright © 2017 DavidStanton. All rights reserved.
 //
+import Foundation
 
 final class StandardMediaObjectIds: ResponseObjectSerializable, CustomStringConvertible  {
 

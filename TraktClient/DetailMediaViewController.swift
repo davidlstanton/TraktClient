@@ -24,7 +24,6 @@ class DetailMediaViewController:  UIViewController {
     }
     
     func configure(mediaObject: MediaObjectViewModel) {
-        
         overviewLabel.text = mediaObject.overview
         ratingLabel.text = "Rating: \(mediaObject.rating)"
         posterImageView.contentMode = .scaleAspectFit
