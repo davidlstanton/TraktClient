@@ -70,7 +70,7 @@ class TrendingMoviesViewController:  UIViewController, IGListAdapterDataSource, 
    
     func getData() {
         let itemCount = items.count
-        let itemsPerPage = 10
+        let itemsPerPage = 20
         let page = Pagination(page: (itemCount/itemsPerPage) + 1, limit: itemsPerPage)
         TrendingMovieService.trendingMovies(page: page, callback: { (mediaObjects) in
             self.items.append(contentsOf: mediaObjects)

@@ -7,7 +7,6 @@
 //
 
 import UIKit
-import IGListKit
 
 final class StandardMediaObject: ResponseObjectSerializable, ResponseCollectionSerializable, CustomStringConvertible {
     

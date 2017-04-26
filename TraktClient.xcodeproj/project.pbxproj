@@ -18,6 +18,7 @@
 		631CA8BB1EA54DFA004DE0CE /* MovieMediaObjectImages.swift in Sources */ = {isa = PBXBuildFile; fileRef = 631CA8BA1EA54DFA004DE0CE /* MovieMediaObjectImages.swift */; };
 		631CA8C11EA61C30004DE0CE /* SpinnerCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 631CA8C01EA61C30004DE0CE /* SpinnerCell.swift */; };
 		631CA8C61EA63DAC004DE0CE /* MediaObjectViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 631CA8C51EA63DAC004DE0CE /* MediaObjectViewModel.swift */; };
+		631E37031EB0E10A00E7AC13 /* PersonObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 631E37021EB0E10A00E7AC13 /* PersonObject.swift */; };
 		635223581E9689810003B3C0 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 635223571E9689810003B3C0 /* AppDelegate.swift */; };
 		6352235D1E9689810003B3C0 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6352235B1E9689810003B3C0 /* Main.storyboard */; };
 		6352235F1E9689810003B3C0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6352235E1E9689810003B3C0 /* Assets.xcassets */; };
@@ -71,6 +72,7 @@
 		631CA8BA1EA54DFA004DE0CE /* MovieMediaObjectImages.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MovieMediaObjectImages.swift; sourceTree = "<group>"; };
 		631CA8C01EA61C30004DE0CE /* SpinnerCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SpinnerCell.swift; sourceTree = "<group>"; };
 		631CA8C51EA63DAC004DE0CE /* MediaObjectViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MediaObjectViewModel.swift; sourceTree = "<group>"; };
+		631E37021EB0E10A00E7AC13 /* PersonObject.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PersonObject.swift; sourceTree = "<group>"; };
 		635223541E9689810003B3C0 /* TraktClient.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TraktClient.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		635223571E9689810003B3C0 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		6352235C1E9689810003B3C0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -216,6 +218,7 @@
 		635223851E968C5D0003B3C0 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				63781B0A1EA65A64001003A0 /* TrendingMovieService.swift */,
 				635223881E96DF6E0003B3C0 /* ResponseSerialization.swift */,
 				6352238A1E96E0510003B3C0 /* BackendError.swift */,
 				6352238C1E96E2590003B3C0 /* StandardMediaObject.swift */,
@@ -228,8 +231,8 @@
 				631CA8B81EA53FD8004DE0CE /* MediaObjectImage.swift */,
 				631CA8BA1EA54DFA004DE0CE /* MovieMediaObjectImages.swift */,
 				63781B081EA650F2001003A0 /* FanArtAssetRouter.swift */,
-				63781B0A1EA65A64001003A0 /* TrendingMovieService.swift */,
 				63C068451EA7751F0085346D /* ImageService.swift */,
+				631E37021EB0E10A00E7AC13 /* PersonObject.swift */,
 			);
 			name = Models;
 			sourceTree = "<group>";
@@ -547,6 +550,7 @@
 				63781AFF1EA64B45001003A0 /* ThumbMediaObjectCell.swift in Sources */,
 				63781AFD1EA64A39001003A0 /* TrendingMoviesViewController.swift in Sources */,
 				6308760E1E9B75CE0006220F /* StandardMediaObjectType.swift in Sources */,
+				631E37031EB0E10A00E7AC13 /* PersonObject.swift in Sources */,
 				631CA8B71EA53B45004DE0CE /* FanArtRouter.swift in Sources */,
 				63781B0B1EA65A64001003A0 /* TrendingMovieService.swift in Sources */,
 				635223891E96DF6E0003B3C0 /* ResponseSerialization.swift in Sources */,
